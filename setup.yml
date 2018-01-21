@@ -1,5 +1,5 @@
 - hosts: localhost
-  user: root
+  become: yes
   tasks:
     - name: install desktop pakcages
       package: name="{{ item }}"
