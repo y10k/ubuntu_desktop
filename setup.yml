@@ -1,0 +1,7 @@
+- hosts: localhost
+  user: root
+  tasks:
+    - name: install desktop pakcages
+      package: name="{{ item }}"
+      with_items:
+        - "{{ packages }}"
