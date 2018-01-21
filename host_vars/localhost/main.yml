@@ -11,7 +11,7 @@ packages:
   - git-cvs
   - gitk
   - git-gui
-  - git-el
+  - gitg
   - xfce4-terminal
   - w3m
   - emacs
@@ -23,6 +23,7 @@ packages:
   - skkdic
   - sdic
   - w3m-el
+  - git-el
   - autofs
   - gcc
   - make
@@ -37,11 +38,10 @@ packages:
   - libmagickwand-dev
   - xosview
   - fetchmail
-  - libyaml
+  - libyaml-0-2
   - libyaml-dev
   - manpages-ja
   - manpages-ja-dev
-  - xmanpages-ja
   - ethtool
   - procinfo
   - tree
@@ -51,11 +51,9 @@ packages:
   - xfonts-100dpi
   - xfonts-75dpi
   - xfonts-kaname
-  - xfonts-mathml
   - xfonts-mplus
   - xfonts-scalable
   - mosh
-  - gitg
   - sysstat
   - unzip
   - xubuntu-desktop
@@ -70,7 +68,6 @@ packages:
   - slapd
   - ldap-utils
   - libldap2-dev
-  - sysv-rc-conf
   - libsasl2-dev
   - docker.io
   - qemu-utils
