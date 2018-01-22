@@ -1,7 +1,5 @@
 - hosts: localhost
   become: yes
-  tasks:
-    - name: install desktop pakcages
-      package: name="{{ item }}"
-      with_items:
-        - "{{ packages }}"
+  roles:
+    - role: desktop_packages
+      desktop_package_list: "{{ desktop_packages }}"

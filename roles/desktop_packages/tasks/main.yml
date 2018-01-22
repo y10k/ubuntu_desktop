@@ -1,0 +1,4 @@
+- name: install desktop packages
+  package: name="{{ item }}"
+  with_items:
+    - "{{ desktop_package_list }}"

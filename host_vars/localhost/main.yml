@@ -1,4 +1,4 @@
-packages:
+desktop_packages:
   - openssh-server
   - lv
   - rcs
