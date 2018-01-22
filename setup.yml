@@ -2,4 +2,4 @@
   become: yes
   roles:
     - role: desktop_packages
-      desktop_package_list: "{{ desktop_packages }}"
+      DESKTOP_PACKAGE_LIST: "{{ DESKTOP_PACKAGES }}"

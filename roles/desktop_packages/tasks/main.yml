@@ -1,4 +1,8 @@
+- fail:
+    msg: "need for a role variable: DESKTOP_PACKAGE_LIST"
+  when: DESKTOP_PACKAGE_LIST is none
+
 - name: install desktop packages
   package: name="{{ item }}"
   with_items:
-    - "{{ desktop_package_list }}"
+    - "{{ DESKTOP_PACKAGE_LIST }}"
