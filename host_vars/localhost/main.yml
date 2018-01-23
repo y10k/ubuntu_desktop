@@ -75,3 +75,7 @@ DESKTOP_PACKAGES:
   - lvm2
   - screen
   - ansible
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

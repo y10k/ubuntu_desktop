@@ -6,3 +6,7 @@
   package: name="{{ item }}"
   with_items:
     - "{{ DESKTOP_PACKAGE_LIST }}"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
