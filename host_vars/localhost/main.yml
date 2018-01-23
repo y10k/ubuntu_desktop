@@ -76,6 +76,8 @@ DESKTOP_PACKAGE_LIST:
   - screen
   - ansible
 
+RUBY_BUILD_VERSION: 2.5.0
+
 # Local Variables:
 # indent-tabs-mode: nil
 # End:

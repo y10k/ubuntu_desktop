@@ -1,0 +1,34 @@
+- name: get ruby source code
+  get_url:
+    url: "{{ RUBY_SOURCE_URL }}/ruby-{{ RUBY_BUILD_VERSION }}.tar.gz"
+    dest: "{{ RUBY_SOURCE_DIR }}/ruby-{{ RUBY_BUILD_VERSION }}.tar.gz"
+
+- name: unpack ruby source code
+  unarchive:
+    src: "{{ RUBY_SOURCE_DIR }}/ruby-{{ RUBY_BUILD_VERSION }}.tar.gz"
+    dest: "{{ RUBY_SOURCE_DIR }}"
+    remote_src: yes
+    keep_newer: yes
+
+- name: build ruby
+  command: "{{ item }}"
+  args:
+    chdir: "{{ RUBY_SOURCE_DIR }}/ruby-{{ RUBY_BUILD_VERSION }}"
+  with_items:
+    - ./configure
+    - make
+    - make test
+
+- name: install ruby
+  become: yes
+  command: make install
+  args:
+    chdir: "{{ RUBY_SOURCE_DIR }}/ruby-{{ RUBY_BUILD_VERSION }}"
+
+- name: install bundler
+  become: yes
+  command: gem install --ri --rdoc bundler
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

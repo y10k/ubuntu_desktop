@@ -1,6 +1,7 @@
 - hosts: localhost
   roles:
     - desktop_packages
+    - ruby_source_build
 
 # Local Variables:
 # indent-tabs-mode: nil
