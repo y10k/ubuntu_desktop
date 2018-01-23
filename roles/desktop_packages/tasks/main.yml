@@ -3,6 +3,7 @@
   when: DESKTOP_PACKAGE_LIST is none
 
 - name: install desktop packages
+  become: yes
   package: name="{{ item }}"
   with_items:
     - "{{ DESKTOP_PACKAGE_LIST }}"
