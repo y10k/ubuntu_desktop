@@ -1,4 +1,4 @@
-DESKTOP_PACKAGES:
+DESKTOP_PACKAGE_LIST:
   - openssh-server
   - lv
   - rcs

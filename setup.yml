@@ -1,7 +1,6 @@
 - hosts: localhost
   roles:
-    - role: desktop_packages
-      DESKTOP_PACKAGE_LIST: "{{ DESKTOP_PACKAGES }}"
+    - desktop_packages
 
 # Local Variables:
 # indent-tabs-mode: nil
