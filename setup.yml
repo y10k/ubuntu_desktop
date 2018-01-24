@@ -1,5 +1,6 @@
 - hosts: localhost
   roles:
+    - login_umask
     - desktop_packages
     - ruby_source_build
 

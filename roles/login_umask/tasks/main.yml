@@ -1,0 +1,10 @@
+- name: "USERGROUPS_ENAB {% if LOGIN_UMASK_USERGROUPS_ENAB %}yes{% else %}no{% endif %} (/etc/login.defs)"
+  become: yes
+  lineinfile:
+    path: /etc/login.defs
+    regexp: "^USERGROUPS_ENAB "
+    line: "USERGROUPS_ENAB {% if LOGIN_UMASK_USERGROUPS_ENAB %}yes{% else %}no{% endif %}"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
