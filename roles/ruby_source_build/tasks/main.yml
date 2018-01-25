@@ -1,3 +1,9 @@
+- name: "source code diretory {{ RUBY_SOURCE_DIR }}"
+  file:
+    state: directory
+    path: "{{ RUBY_SOURCE_DIR }}"
+    mode: 0755
+
 - name: "get ruby source code from {{ RUBY_SOURCE_URL }}/ruby-{{ RUBY_BUILD_VERSION }}.tar.gz"
   get_url:
     url: "{{ RUBY_SOURCE_URL }}/ruby-{{ RUBY_BUILD_VERSION }}.tar.gz"
