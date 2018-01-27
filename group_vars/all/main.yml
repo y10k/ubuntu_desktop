@@ -70,6 +70,7 @@ DESKTOP_PACKAGE_LIST:
   - libldap2-dev
   - libsasl2-dev
   - docker.io
+  - docker-compose
   - qemu-utils
   - nbd-client
   - lvm2
