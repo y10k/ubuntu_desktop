@@ -31,6 +31,12 @@ task :test_remove do
   sh %Q{ sudo docker rm -f desktop_setup_test }
 end
 
+desc 'test container login'
+task :test_login do
+  ip, port = get_test_host
+  sh "slogin -l admin -p #{port} #{ip}"
+end
+
 desc 'desktop setup playbook in test container'
 task :desktop_setup_test do
   sh %q{ ansible-playbook -i inventory/test site.yml }
