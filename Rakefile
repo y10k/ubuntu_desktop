@@ -33,12 +33,12 @@ end
 
 desc 'desktop setup playbook in test container'
 task :desktop_setup_test do
-  sh %q{ ansible-playbook -i inventory/test setup.yml }
+  sh %q{ ansible-playbook -i inventory/test site.yml }
 end
 
 desc 'desktop setup playbook on localhost'
 task :desktop_setup_local do
-  sh %q{ ansible-playbook -i inventory/local setup.yml }
+  sh %q{ ansible-playbook -i inventory/local site.yml }
 end
 
 # Local Variables:
