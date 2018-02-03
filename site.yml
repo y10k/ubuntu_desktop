@@ -1,8 +1,10 @@
 - hosts: all
   roles:
-    - login_umask
-    - desktop_packages
-    - ruby_source_build
+    - role: login_umask
+    - role: desktop_packages
+    - role: ruby-build
+      ruby_build_download_local_dir: /home/toki/src
+    - role: ruby-system-gems
 
 # Local Variables:
 # indent-tabs-mode: nil

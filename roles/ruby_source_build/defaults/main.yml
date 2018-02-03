@@ -1,9 +1,0 @@
-# https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.0.tar.gz
-
-RUBY_SOURCE_URL: http://cache.ruby-lang.org/pub/ruby
-RUBY_SOURCE_DIR: "{{ ansible_env.HOME }}/src"
-RUBY_BUILD_VERSION: 2.5.0
-
-# Local Variables:
-# indent-tabs-mode: nil
-# End:
