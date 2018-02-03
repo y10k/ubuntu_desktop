@@ -11,23 +11,23 @@ task :test_host do
 end
 
 desc 'test container run'
-task :test_container_run do
+task :test_run do
   ip, port = get_test_host
   sh %Q{ sudo docker run -d -p #{ip}:#{port}:22 --name=desktop_setup_test sshd_ubuntu:17.10 }
 end
 
 desc 'test container start'
-task :test_container_start do
+task :test_start do
   sh %Q{ sudo docker start desktop_setup_test }
 end
 
 desc 'test container stop'
-task :test_container_stop do
+task :test_stop do
   sh %Q{ sudo docker stop desktop_setup_test }
 end
 
 desc 'test container remove'
-task :test_container_remove do
+task :test_remove do
   sh %Q{ sudo docker rm -f desktop_setup_test }
 end
 
