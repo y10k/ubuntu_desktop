@@ -1,0 +1,5 @@
+sshd_authpass_enable: false
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

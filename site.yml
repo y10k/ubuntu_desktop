@@ -2,6 +2,7 @@
   roles:
     - role: login_umask
     - role: desktop_packages
+    - role: sshd_authpass
     - role: ruby-build
       ruby_build_download_local_dir: /home/toki/src
     - role: ruby-system-gems

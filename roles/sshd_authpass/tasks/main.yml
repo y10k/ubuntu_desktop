@@ -1,0 +1,10 @@
+- name: "PasswordAuthentication {% if sshd_authpass_enable %}yes{% else %}no{% endif %} (/etc/ssh/sshd_config)"
+  become: yes
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^PasswordAuthentication "
+    line: "PasswordAuthentication {% if sshd_authpass_enable %}yes{% else %}no{% endif %}"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
