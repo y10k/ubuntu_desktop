@@ -77,6 +77,8 @@ DESKTOP_PACKAGE_LIST:
   - screen
   - ansible
 
+ruby_build_download_local_dir: /home/toki/src
+
 # Local Variables:
 # indent-tabs-mode: nil
 # End:

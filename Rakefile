@@ -64,6 +64,11 @@ task :desktop_setup_local do
   sh %q{ ansible-playbook -i inventory/local site.yml }
 end
 
+desc 'dump hostvars'
+task :dump do
+  sh %q{ ansible-playbook -i inventory/local dump.yml }
+end
+
 # Local Variables:
 # mode: Ruby
 # indent-tabs-mode: nil
