@@ -65,7 +65,6 @@ DESKTOP_PACKAGE_LIST:
   - libffi-dev
   - autoconf
   - bison
-  - slapd
   - ldap-utils
   - libldap2-dev
   - libsasl2-dev
