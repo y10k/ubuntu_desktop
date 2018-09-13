@@ -77,6 +77,7 @@ DESKTOP_PACKAGE_LIST:
   - ansible
 
 ruby_build_download_local_dir: /home/toki/src
+ruby_build_clear_previous_build: true
 
 # Local Variables:
 # indent-tabs-mode: nil
