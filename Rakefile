@@ -51,7 +51,6 @@ task :test_inventory do
     output << " ansible_host=#{DOCKER_HOST}"
     output << " ansible_port=#{get_published_port(NAME)}"
     output << " ansible_user=admin"
-    output << " ruby_build_make_options=-j4"
     output << "\n"
   }
 end
