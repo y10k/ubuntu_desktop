@@ -91,7 +91,7 @@ end
 
 desc 'desktop setup playbook on localhost'
 task :desktop_setup_local do
-  sh "ansible-playbook -i inventory/local site.yml"
+  sh "ansible-playbook -Ki inventory/local site.yml"
 end
 
 desc 'dump hostvars'
