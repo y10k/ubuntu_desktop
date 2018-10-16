@@ -1,0 +1,5 @@
+apt_preferences_d: /etc/apt/preferences.d
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

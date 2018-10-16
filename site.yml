@@ -1,6 +1,7 @@
 - hosts: all
   roles:
     - login_umask
+    - wsl_apt_preferences
     - desktop_packages
     - sshd_authpass
     - ruby-build

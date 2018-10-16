@@ -1,0 +1,16 @@
+- name: "setup {{ apt_preferences_d }}"
+  become: yes
+  template:
+    src: "{{ item }}.j2"
+    dest: "{{ apt_preferences_d }}/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - no_install_on_wls
+  when: >-
+    "-Microsoft" in ansible_kernel
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
