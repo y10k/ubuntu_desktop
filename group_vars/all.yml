@@ -47,6 +47,7 @@ DESKTOP_PACKAGE_LIST:
   - tree
   - x11-common
   - x11-utils
+  - x11-apps
   - xfonts-utils
   - xfonts-100dpi
   - xfonts-75dpi
@@ -75,6 +76,7 @@ DESKTOP_PACKAGE_LIST:
   - lvm2
   - screen
   - ansible
+  - pandoc
 
 ruby_build_download_local_dir: /home/toki/src
 ruby_build_clear_previous_build: true
