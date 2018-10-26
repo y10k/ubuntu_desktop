@@ -4,7 +4,7 @@
     - wsl_apt_preferences
     - desktop_packages
     - sshd_authpass
-    - ruby-build
+    - y10k.ruby_build
     - ruby-system-gems
 
 # Local Variables:
