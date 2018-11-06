@@ -5,7 +5,8 @@
     - desktop_packages
     - sshd_authpass
     - y10k.ruby_build
-    - ruby-system-gems
+    - y10k.rubygems_setup
+    # - y10k.rubygems_update
 
 # Local Variables:
 # indent-tabs-mode: nil
