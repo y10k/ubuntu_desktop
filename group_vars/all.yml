@@ -77,6 +77,9 @@ DESKTOP_PACKAGE_LIST:
   - screen
   - ansible
   - pandoc
+  - libqdbm-dev
+  - qdbm-doc
+  - qdbm-util
 
 ruby_build_download_local_dir: /home/toki/src
 ruby_build_clear_previous_build: true
