@@ -80,6 +80,8 @@ DESKTOP_PACKAGE_LIST:
   - libqdbm-dev
   - qdbm-doc
   - qdbm-util
+  - httperf
+  - siege
 
 ruby_build_download_local_dir: /home/toki/src
 ruby_build_clear_previous_build: true
