@@ -1,0 +1,17 @@
+- name: "add MS-Windows fonts to X"
+  become: yes
+  file:
+    state: link
+    path: /usr/share/fonts/ms-windows
+    src: /mnt/c/Windows/Fonts
+  when: >-
+    "-Microsoft" in ansible_kernel
+- name: "update X fonts"
+  become: yes
+  command: fc-cache -fv
+  when: >-
+    "-Microsoft" in ansible_kernel
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

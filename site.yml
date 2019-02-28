@@ -5,6 +5,7 @@
     - desktop_packages
     - sshd_authpass
     # - qdbm_symlinks
+    - xfonts
     - y10k.ruby_build
     - y10k.rubygems_setup
     # - y10k.rubygems_update
