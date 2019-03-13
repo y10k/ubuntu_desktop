@@ -82,6 +82,7 @@ DESKTOP_PACKAGE_LIST:
   - { state: present, name: qdbm-util }
   - { state: present, name: httperf }
   - { state: absent,  name: siege }
+  - { state: present, name: libluajit-5.1-dev }
 
 ruby_build_download_local_dir: /home/toki/src
 ruby_build_clear_previous_build: true
