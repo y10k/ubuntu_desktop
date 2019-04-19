@@ -1,6 +1,7 @@
 DESKTOP_PACKAGE_LIST:
   - { state: present, name: openssh-server }
   - { state: present, name: lv }
+  - { state: present, name: nkf }
   - { state: present, name: rcs }
   - { state: present, name: cvs }
   - { state: present, name: subversion }
