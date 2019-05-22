@@ -1,0 +1,21 @@
+- name: OS family
+  fail:
+    msg: "OS family is not a `Debian'."
+  when: ansible_os_family != "Debian"
+
+- name: avoid package conflicts
+  script: packages_should_not_exist.sh emacs25
+
+- name: add kelleyk/emacs repository
+  become: yes
+  apt_repository:
+    repo: ppa:kelleyk/emacs
+
+- name: install emacs26
+  become: yes
+  apt:
+    name: emacs26
+
+# Local Variables:
+# # indent-tabs-mode: nil
+# # End:
