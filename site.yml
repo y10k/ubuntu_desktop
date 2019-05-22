@@ -2,6 +2,7 @@
   roles:
     - login_umask
     - wsl_apt_preferences
+    - emacs26_install
     - desktop_packages
     - sshd_authpass
     # - qdbm_symlinks

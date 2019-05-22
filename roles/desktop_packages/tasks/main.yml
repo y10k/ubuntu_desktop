@@ -15,6 +15,7 @@
   apt:
     name: "{{ item }}"
     state: absent
+    purge: yes
   with_items: >-
     {{ DESKTOP_PACKAGE_LIST | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
 

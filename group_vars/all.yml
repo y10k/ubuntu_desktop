@@ -15,16 +15,19 @@ DESKTOP_PACKAGE_LIST:
   - { state: present, name: gitg }
   - { state: present, name: xfce4-terminal }
   - { state: present, name: w3m }
-  - { state: present, name: emacs }
-  - { state: present, name: apel }
-  - { state: present, name: flim }
-  - { state: present, name: semi }
-  - { state: present, name: wl }
-  - { state: present, name: ddskk }
+  - { state: absent,  name: emacs25 }            # for emacs26
+  - { state: absent,  name: emacs25-bin-common } # for emacs26
+  - { state: absent,  name: emacs25-common }     # for emacs26
+  - { state: absent,  name: emacs25-el }         # for emacs26
+  - { state: absent,  name: apel }               # replaced by emacs package.el
+  - { state: absent,  name: flim }               # replaced by emacs package.el
+  - { state: absent,  name: semi }               # replaced by emacs package.el
+  - { state: absent,  name: wl }                 # replaced by emacs package.el
+  - { state: absent,  name: ddskk }              # replaced by emacs package.el
   - { state: present, name: skkdic }
   - { state: present, name: sdic }
-  - { state: present, name: w3m-el }
-  - { state: present, name: git-el }
+  - { state: absent,  name: w3m-el }             # obsoleted
+  - { state: absent,  name: git-el }             # obsoleted
   - { state: present, name: autofs }
   - { state: present, name: gcc }
   - { state: present, name: make }
