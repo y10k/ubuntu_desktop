@@ -2,9 +2,9 @@
   roles:
     - login_umask
     - wsl_apt_preferences
-    - y10k.kelleyk_emacs
     - desktop_packages
     - sshd_authpass
+    - y10k.kelleyk_emacs
     # - qdbm_symlinks
     - xfonts
     - y10k.ruby_build
