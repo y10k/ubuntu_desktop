@@ -27,6 +27,14 @@
   with_items: >-
     {{ DESKTOP_PACKAGE_LIST | selectattr("state", "eq", "present") | map(attribute="name") | list }}
 
+- name: present python packages
+  become: yes
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ PYTHON_PACKAGE_LIST }}"
+
 # Local Variables:
 # indent-tabs-mode: nil
 # End:
