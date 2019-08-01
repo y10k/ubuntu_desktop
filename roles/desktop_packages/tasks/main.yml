@@ -1,9 +1,8 @@
 - name: check setup state
   fail:
     msg: not allowed state
-  when: not item.state in ("present", "absent")
-  with_items:
-    - "{{ desktop_packages_setup_list }}"
+  with_items: >-
+    {{ desktop_packages_setup_list | selectattr("state", "ne", "absent") | selectattr("state", "ne", "present") | list }}
 
 - name: absent packages
   become: yes
