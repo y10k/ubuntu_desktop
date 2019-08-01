@@ -1,0 +1,11 @@
+- name: packages
+  become: yes
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ PYTHON_PACKAGE_LIST }}"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

@@ -3,6 +3,7 @@
     - login_umask
     - wsl_apt_preferences
     - desktop_packages
+    - python_packages
     - sshd_authpass
     - y10k.kelleyk_emacs
     # - qdbm_symlinks

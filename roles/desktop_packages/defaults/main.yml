@@ -89,9 +89,6 @@ DESKTOP_PACKAGE_LIST:
   - { state: absent,  name: siege }
   - { state: present, name: libluajit-5.1-dev }
 
-PYTHON_PACKAGE_LIST:
-  - pywinrm
-
 # Local Variables:
 # indent-tabs-mode: nil
 # End:
