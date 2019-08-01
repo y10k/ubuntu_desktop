@@ -1,4 +1,4 @@
-PYTHON_PACKAGE_LIST:
+python_packages_setup_list:
   - pywinrm
 
 # Local Variables:

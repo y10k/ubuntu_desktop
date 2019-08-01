@@ -4,7 +4,7 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - "{{ PYTHON_PACKAGE_LIST }}"
+    - "{{ python_packages_setup_list }}"
 
 # Local Variables:
 # indent-tabs-mode: nil
