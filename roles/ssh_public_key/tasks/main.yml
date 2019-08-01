@@ -12,7 +12,7 @@
     owner: "{{ ansible_user_uid }}"
     group: "{{ ansible_user_gid }}"
     mode: 0600
-    regexp: "{{ item.type }} {{ item.public_key }}"
+    regexp: "{{ item.type | regex_escape }} {{ item.public_key | regex_escape }}"
     line: "{% if item.options is defined %}{{ item.options }}{% endif %}{{ item.type }} {{ item.public_key }} {{ item.comment }}"
   with_items:
     - "{{ ssh_public_key_setup_list }}"
