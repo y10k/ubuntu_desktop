@@ -4,12 +4,32 @@ require 'json'
 require 'pathname'
 require 'uri'
 
+desc 'ping to localhost'
+task :ping do
+  sh "ansible -i inventory/local all -m ping"
+end
+
+desc 'facts on localhost'
+task :facts do
+  sh "ansible -i inventory/local all -m setup"
+end
+
 desc 'run playbook on localhost'
 task :run do
   sh "ansible-playbook -Ki inventory/local site.yml"
 end
 
-desc 'run playbook in test container'
+desc 'ping to test container'
+task :ping_test => %w[ test:inventory ].map(&:to_sym) do
+  sh "ansible -i inventory/test all -m ping"
+end
+
+desc 'facts on test container'
+task :facts_test => %w[ test:inventory ].map(&:to_sym) do
+  sh "ansible -i inventory/test all -m setup"
+end
+
+desc 'run playbook on test container'
 task :run_test => %w[ test:inventory ].map(&:to_sym) do
   sh "ansible-playbook -i inventory/test site.yml"
 end
