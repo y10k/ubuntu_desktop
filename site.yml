@@ -6,11 +6,9 @@
     - python_packages
     - sshd_authpass
     - y10k.kelleyk_emacs
-    # - qdbm_symlinks
     - xfonts
     - y10k.ruby_build
     - y10k.rubygems_setup
-    # - y10k.rubygems_update
 
 # Local Variables:
 # indent-tabs-mode: nil
