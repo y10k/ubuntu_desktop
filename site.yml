@@ -5,6 +5,7 @@
     - desktop_packages
     - python_packages
     - sshd_authpass
+    - ssh_public_key
     - xfonts
     - y10k.kelleyk_emacs
     - y10k.ruby_build

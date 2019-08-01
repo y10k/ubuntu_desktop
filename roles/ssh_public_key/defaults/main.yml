@@ -1,0 +1,8 @@
+ssh_public_key_setup_list:
+  - type: ssh-ed25519
+    public_key: AAAAC3NzaC1lZDI1NTE5AAAAIJeUhaV5Yz8uhxb6nbUSz2UDvdnYJ2Sd3g/YVf4Yzk8d
+    comment: toki@vbox-linux
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
