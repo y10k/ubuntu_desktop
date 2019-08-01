@@ -1,8 +1,3 @@
-- name: check DESKTOP_PACKAGE_LIST
-  fail:
-    msg: "need for a role variable: DESKTOP_PACKAGE_LIST"
-  when: DESKTOP_PACKAGE_LIST is none
-
 - name: check state of DESKTOP_PACKAGE_LIST
   fail:
     msg: not allowed state
