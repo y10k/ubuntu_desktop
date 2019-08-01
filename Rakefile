@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 
-require 'json'
-require 'pathname'
-require 'uri'
-
 desc 'ping to localhost'
 task :ping do
   sh "ansible -i inventory/local all -m ping"
@@ -35,6 +31,10 @@ task :run_test => %w[ test:inventory ].map(&:to_sym) do
 end
 
 namespace :test do
+  require 'json'
+  require 'pathname'
+  require 'uri'
+
   DOCKER = ENV['DOCKER_COMMAND'] || 'docker'
   DOCKER_HOST = (ENV.key? 'DOCKER_HOST') ? URI(ENV['DOCKER_HOST']).host : 'localhost'
   IMAGE = 'sshd_ubuntu:18.04'
@@ -115,6 +115,16 @@ namespace :test do
     sh "#{DOCKER} exec -u admin -it #{NAME} bash"
   end
 end
+
+require 'rake/clean'
+
+desc 'converto README markdown to html'
+task :readme => [ 'README.html' ]
+
+file 'README.html' => [ 'README.md' ] do
+  sh "pandoc --from=markdown --to=html5 --standalone --self-contained --css=$HOME/.pandoc/github.css --output=README.html README.md"
+end
+CLOBBER.include 'README.html'
 
 # Local Variables:
 # mode: Ruby
