@@ -14,11 +14,6 @@ task :run_test => %w[ test:inventory ].map(&:to_sym) do
   sh "ansible-playbook -i inventory/test site.yml"
 end
 
-desc 'dump hostvars'
-task :dump do
-  sh "ansible-playbook -i inventory/local dump.yml"
-end
-
 namespace :test do
   DOCKER = ENV['DOCKER_COMMAND'] || 'docker'
   DOCKER_HOST = (ENV.key? 'DOCKER_HOST') ? URI(ENV['DOCKER_HOST']).host : 'localhost'
