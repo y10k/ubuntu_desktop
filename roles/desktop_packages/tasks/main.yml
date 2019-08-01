@@ -1,26 +1,26 @@
-- name: check state of DESKTOP_PACKAGE_LIST
+- name: check setup state
   fail:
     msg: not allowed state
   when: not item.state in ("present", "absent")
   with_items:
-    - "{{ DESKTOP_PACKAGE_LIST }}"
+    - "{{ desktop_packages_setup_list }}"
 
-- name: absent desktop packages
+- name: absent packages
   become: yes
   apt:
     name: "{{ item }}"
     state: absent
     purge: yes
   with_items: >-
-    {{ DESKTOP_PACKAGE_LIST | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
+    {{ desktop_packages_setup_list | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
 
-- name: present desktop packages
+- name: present packages
   become: yes
   apt:
     name: "{{ item }}"
     state: present
   with_items: >-
-    {{ DESKTOP_PACKAGE_LIST | selectattr("state", "eq", "present") | map(attribute="name") | list }}
+    {{ desktop_packages_setup_list | selectattr("state", "eq", "present") | map(attribute="name") | list }}
 
 # Local Variables:
 # indent-tabs-mode: nil

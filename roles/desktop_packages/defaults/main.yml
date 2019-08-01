@@ -1,4 +1,4 @@
-DESKTOP_PACKAGE_LIST:
+desktop_packages_setup_list:
   - { state: present, name: openssh-server }
   - { state: present, name: lv }
   - { state: present, name: nkf }
