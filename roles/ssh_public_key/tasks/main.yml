@@ -1,12 +1,14 @@
 - name: directory
   file:
     state: directory
-    path: "{{ ansible_user_dir }}/.ssh"
+    path: "{{ item }}"
     owner: "{{ ansible_user_uid }}"
     group: "{{ ansible_user_gid }}"
     mode: 0700
+  with_items:
+    - "{{ ansible_user_dir }}/.ssh"
 
-- name: public key
+- name: authorized_keys
   lineinfile:
     path: "{{ ansible_user_dir }}/.ssh/authorized_keys"
     owner: "{{ ansible_user_uid }}"
