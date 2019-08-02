@@ -2,7 +2,7 @@
   fail:
     msg: not allowed state
   with_items: >-
-    {{ desktop_packages_setup_list | selectattr("state", "ne", "absent") | selectattr("state", "ne", "present") | list }}
+    {{ desktop_packages_setup_list | rejectattr("state", "in", ("present", "absent")) |  list }}
 
 - name: absent packages
   become: yes
