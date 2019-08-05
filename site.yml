@@ -6,6 +6,7 @@
     - python_packages
     - sshd_authpass
     - ssh_public_key
+    - pandoc_github_css
     - xfonts
     - y10k.kelleyk_emacs
     - y10k.ruby_build

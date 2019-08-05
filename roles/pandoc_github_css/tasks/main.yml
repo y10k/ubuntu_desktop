@@ -1,0 +1,27 @@
+- name: directory
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - "{{ pandoc_github_css_dir }}"
+
+- name: github.css
+  get_url:
+    url: https://gist.githubusercontent.com/andyferra/2554919/raw/10ce87fe71b23216e3075d5648b8b9e56f7758e1/github.css
+    dest: "{{ pandoc_github_css_dir }}/github.css"
+
+- name: image file URLs
+  lineinfile:
+    path: "{{ pandoc_github_css_dir }}/github.css"
+    backrefs: yes
+    regexp: >-
+      (.*)url\("[^"]*/{{ item }}"\)(.*)
+    line: >-
+      \g<1>url("https://raw.githubusercontent.com/gollum/gollum/master/lib/gollum/public/gollum/images/{{ item }}")\g<2>
+  with_items:
+    - para.png
+    - dirty-shade.png
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

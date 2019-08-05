@@ -1,0 +1,5 @@
+pandoc_github_css_dir: "{{ ansible_env.HOME }}/.pandoc"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
