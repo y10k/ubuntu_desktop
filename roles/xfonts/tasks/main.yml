@@ -1,16 +1,20 @@
-- name: "add MS-Windows fonts to X"
-  become: yes
-  file:
-    state: link
-    path: /usr/share/fonts/ms-windows
-    src: /mnt/c/Windows/Fonts
-  when: >-
-    "-Microsoft" in ansible_kernel
-- name: "update X fonts"
-  become: yes
-  command: fc-cache -fv
-  when: >-
-    "-Microsoft" in ansible_kernel
+- name: WSL fonts directory exists?
+  stat:
+    path: /mnt/c/Windows/Fonts
+  register: win_fonts
+
+- when: win_fonts.stat.exists and win_fonts.stat.isdir
+  block:
+    - name: "add MS-Windows fonts to X"
+      become: yes
+      file:
+        state: link
+        path: /usr/share/fonts/ms-windows
+        src: /mnt/c/Windows/Fonts
+
+    - name: "update X fonts"
+      become: yes
+      command: fc-cache -fv
 
 # Local Variables:
 # indent-tabs-mode: nil
