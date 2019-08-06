@@ -1,0 +1,12 @@
+- name: git clone
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    update: no
+  with_items:
+    - repo: "{{ emacs_d_git_repo }}"
+      dest: "{{ emacs_d_user_dir }}/{{ emacs_d_git_clone_name }}"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

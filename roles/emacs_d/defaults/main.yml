@@ -1,0 +1,7 @@
+emacs_d_user_dir: "{{ ansible_user_dir }}"
+emacs_d_git_repo: git@github.com:y10k/emacs.d.git
+emacs_d_git_clone_name: .emacs.d
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
