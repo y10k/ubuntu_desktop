@@ -1,0 +1,20 @@
+dotfiles_user_dir: "{{ ansible_user_dir }}"
+dotfiles_git_repo: git@github.com:y10k/dotfiles.git
+dotfiles_git_clone_name: dotfiles
+
+dotfiles_link_list:
+  - { state: present, path: .bashrc,       src: dot.bashrc }
+  - { state: present, path: .bash_profile, src: dot.bash_profile }
+  - { state: present, path: .inputrc,      src: dot.inputrc }
+  - { state: present, path: .gitconfig,    src: dot.gitconfig }
+  - { state: present, path: .screenrc,     src: dot.screenrc }
+  - { state: present, path: .exrc,         src: dot.exrc }
+  - { state: present, path: .wgetrc,       src: dot.wgetrc }
+  - { state: present, path: .wl,           src: dot.wl }
+  - { state: present, path: .folders,      src: dot.folders }
+  - { state: present, path: start_wsl.sh,  src: start_wsl.sh }
+  - { state: present, path: stop_wsl.sh,   src: stop_wsl.sh }
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

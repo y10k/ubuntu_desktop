@@ -7,6 +7,7 @@
     - sshd_authpass
     - ssh_public_key
     - emacs_d
+    - dotfiles
     - pandoc_github_css
     - xfonts
     - y10k.kelleyk_emacs
