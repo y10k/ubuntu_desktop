@@ -1,6 +1,9 @@
 dotfiles_user_dir: "{{ ansible_user_dir }}"
-dotfiles_git_repo: git@github.com:y10k/dotfiles.git
+dotfiles_git_repo: https://github.com/y10k/dotfiles.git
 dotfiles_git_clone_name: dotfiles
+
+dotfiles_git_edit_remote_name: github
+dotfiles_git_edit_remote_repo: git@github.com:y10k/dotfiles.git
 
 dotfiles_link_list:
   - { state: present, path: .bashrc,       src: dot.bashrc }

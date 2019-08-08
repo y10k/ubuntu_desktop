@@ -7,6 +7,21 @@
     - repo: "{{ dotfiles_git_repo }}"
       dest: "{{ dotfiles_user_dir }}/{{ dotfiles_git_clone_name }}"
 
+- name: remote for edit
+  ini_file:
+    path: "{{ dotfiles_user_dir }}/{{ dotfiles_git_clone_name }}/.git/config"
+    section: 'remote "{{ item.section }}"'
+    option: "\t{{ item.option }}"
+    value: "{{ item.value }}"
+    create: no
+  with_items:
+    - section: "{{ dotfiles_git_edit_remote_name }}"
+      option: url
+      value: "{{ dotfiles_git_edit_remote_repo }}"
+    - section: "{{ dotfiles_git_edit_remote_name }}"
+      option: fetch
+      value: "+refs/heads/*:refs/remotes/{{ dotfiles_git_edit_remote_name }}/*"
+
 - name: check state
   fail:
     msg: not allowed state
