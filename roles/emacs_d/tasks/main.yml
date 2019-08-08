@@ -7,6 +7,36 @@
     - repo: "{{ emacs_d_git_repo }}"
       dest: "{{ emacs_d_user_dir }}/{{ emacs_d_git_clone_name }}"
 
+- name: remote for edit
+  ini_file:
+    path: "{{ emacs_d_user_dir }}/{{ emacs_d_git_clone_name }}/.git/config"
+    section: 'remote "{{ item.section }}"'
+    option: "\t{{ item.option }}"
+    value: "{{ item.value }}"
+    create: no
+  with_items:
+    - section: "{{ emacs_d_git_edit_remote_name }}"
+      option: url
+      value: "{{ emacs_d_git_edit_remote_repo }}"
+    - section: "{{ emacs_d_git_edit_remote_name }}"
+      option: fetch
+      value: "+refs/heads/*:refs/remotes/{{ emacs_d_git_edit_remote_name }}/*"
+
+- name: submodule remote for edit
+  ini_file:
+    path: "{{ emacs_d_user_dir }}/{{ emacs_d_git_clone_name }}/.git/modules/{{ emacs_d_git_ruby_unit_test_submodule_path }}/config"
+    section: 'remote "{{ item.section }}"'
+    option: "\t{{ item.option }}"
+    value: "{{ item.value }}"
+    create: no
+  with_items:
+    - section: "{{ emacs_d_git_edit_remote_name }}"
+      option: url
+      value: "{{ emacs_d_git_ruby_unit_test_submodlue_edit_remote_repo }}"
+    - section: "{{ emacs_d_git_edit_remote_name }}"
+      option: fetch
+      value: "+refs/heads/*:refs/remotes/{{ emacs_d_git_edit_remote_name }}/*"
+
 # Local Variables:
 # indent-tabs-mode: nil
 # End:

@@ -1,6 +1,11 @@
 emacs_d_user_dir: "{{ ansible_user_dir }}"
-emacs_d_git_repo: git@github.com:y10k/emacs.d.git
+emacs_d_git_repo: https://github.com/y10k/emacs.d.git
 emacs_d_git_clone_name: .emacs.d
+
+emacs_d_git_edit_remote_name: github
+emacs_d_git_edit_remote_repo: git@github.com:y10k/emacs.d.git
+emacs_d_git_ruby_unit_test_submodule_path: local/ruby-test-unit
+emacs_d_git_ruby_unit_test_submodlue_edit_remote_repo: git@github.com:y10k/ruby-test-unit.el.git
 
 # Local Variables:
 # indent-tabs-mode: nil
