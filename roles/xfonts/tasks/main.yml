@@ -1,9 +1,9 @@
 - name: WSL fonts directory exists?
   stat:
     path: /mnt/c/Windows/Fonts
-  register: win_fonts
+  register: xfonts_win_fonts
 
-- when: win_fonts.stat.exists and win_fonts.stat.isdir
+- when: xfonts_win_fonts.stat.exists and xfonts_win_fonts.stat.isdir
   block:
     - name: "add MS-Windows fonts to X"
       become: yes
