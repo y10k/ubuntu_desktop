@@ -2,7 +2,7 @@
   roles:
     - login_umask
     - wsl_apt_preferences
-    - desktop_packages
+    - apt_packages
     - python_packages
     - sshd_authpass
     - ssh_public_key
