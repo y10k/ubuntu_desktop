@@ -1,5 +1,7 @@
 *~
 *.log
 *.retry
+\#*
+.#*
 /README.html
 /inventory/test
