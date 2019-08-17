@@ -2,7 +2,7 @@
   fail:
     msg: not allowed state
   with_items: >-
-    {{ desktop_packages_setup_list | rejectattr("state", "in", ("present", "absent")) |  list }}
+    {{ apt_packages_setup_list | rejectattr("state", "in", ("present", "absent")) |  list }}
 
 - name: absent packages
   become: yes
@@ -11,7 +11,7 @@
     state: absent
     purge: yes
   with_items: >-
-    {{ desktop_packages_setup_list | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
+    {{ apt_packages_setup_list | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
 
 - name: present packages
   become: yes
@@ -19,7 +19,7 @@
     name: "{{ item }}"
     state: present
   with_items: >-
-    {{ desktop_packages_setup_list | selectattr("state", "eq", "present") | map(attribute="name") | list }}
+    {{ apt_packages_setup_list | selectattr("state", "eq", "present") | map(attribute="name") | list }}
 
 # Local Variables:
 # indent-tabs-mode: nil
