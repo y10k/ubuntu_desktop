@@ -10,9 +10,14 @@ task :facts do
   sh "ansible -i inventory/local all -m setup"
 end
 
-desc 'run playbook on localhost'
+desc 'run setup playbook on localhost'
 task :run do
   sh "ansible-playbook -Ki inventory/local site.yml"
+end
+
+desc 'run update playbook on localhost'
+task :update do
+  sh "ansible-playbook -Ki inventory/local update.yml"
 end
 
 desc 'ping to test container'
@@ -25,9 +30,14 @@ task :facts_test => %w[ test:inventory ].map(&:to_sym) do
   sh "ansible -i inventory/test all -m setup"
 end
 
-desc 'run playbook on test container'
+desc 'run setup playbook on test container'
 task :run_test => %w[ test:inventory ].map(&:to_sym) do
   sh "ansible-playbook -i inventory/test site.yml"
+end
+
+desc 'run update playbook on test container'
+task :update_test => %w[ test:inventory ].map(&:to_sym) do
+  sh "ansible-playbook -i inventory/test update.yml"
 end
 
 namespace :test do

@@ -1,0 +1,7 @@
+- hosts: all
+  roles:
+    - apt_update
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
