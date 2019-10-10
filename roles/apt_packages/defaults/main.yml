@@ -88,6 +88,7 @@ apt_packages_setup_list:
   - { state: present, name: httperf }
   - { state: absent,  name: siege }
   - { state: present, name: libluajit-5.1-dev }
+  - { state: present, name: aspell }
 
 # Local Variables:
 # indent-tabs-mode: nil
