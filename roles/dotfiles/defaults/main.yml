@@ -13,8 +13,8 @@ dotfiles_link_list:
   - { state: present, path: .screenrc,     src: dot.screenrc }
   - { state: present, path: .exrc,         src: dot.exrc }
   - { state: present, path: .wgetrc,       src: dot.wgetrc }
-  - { state: present, path: .wl,           src: dot.wl }
-  - { state: present, path: .folders,      src: dot.folders }
+  - { state: absent,  path: .wl,           src: dot.wl }
+  - { state: absent,  path: .folders,      src: dot.folders }
   - { state: present, path: .aspell.conf,  src: dot.aspell.conf }
   - { state: present, path: start_wsl.sh,  src: start_wsl.sh }
   - { state: present, path: stop_wsl.sh,   src: stop_wsl.sh }
