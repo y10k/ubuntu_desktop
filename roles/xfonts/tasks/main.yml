@@ -14,7 +14,7 @@
 
     - name: "update X fonts"
       become: yes
-      command: fc-cache -fv
+      command: fc-cache
 
 # Local Variables:
 # indent-tabs-mode: nil
