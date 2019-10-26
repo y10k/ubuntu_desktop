@@ -6,18 +6,19 @@ dotfiles_git_edit_remote_name: github
 dotfiles_git_edit_remote_repo: git@github.com:y10k/dotfiles.git
 
 dotfiles_link_list:
-  - { state: present, path: .bashrc,       src: dot.bashrc }
-  - { state: present, path: .bash_profile, src: dot.bash_profile }
-  - { state: present, path: .inputrc,      src: dot.inputrc }
-  - { state: present, path: .gitconfig,    src: dot.gitconfig }
-  - { state: present, path: .screenrc,     src: dot.screenrc }
-  - { state: present, path: .exrc,         src: dot.exrc }
-  - { state: present, path: .wgetrc,       src: dot.wgetrc }
-  - { state: absent,  path: .wl,           src: dot.wl }
-  - { state: absent,  path: .folders,      src: dot.folders }
-  - { state: present, path: .aspell.conf,  src: dot.aspell.conf }
-  - { state: present, path: start_wsl.sh,  src: start_wsl.sh }
-  - { state: present, path: stop_wsl.sh,   src: stop_wsl.sh }
+  - { state: present, path: .bashrc,          src: dot.bashrc }
+  - { state: present, path: .bash_profile,    src: dot.bash_profile }
+  - { state: present, path: .inputrc,         src: dot.inputrc }
+  - { state: present, path: .gitconfig,       src: dot.gitconfig }
+  - { state: present, path: .screenrc,        src: dot.screenrc }
+  - { state: present, path: .exrc,            src: dot.exrc }
+  - { state: present, path: .wgetrc,          src: dot.wgetrc }
+  - { state: absent,  path: .wl,              src: dot.wl }
+  - { state: absent,  path: .folders,         src: dot.folders }
+  - { state: present, path: .aspell.conf,     src: dot.aspell.conf }
+  - { state: present, path: start_wsl.sh,     src: start_wsl.sh }
+  - { state: present, path: stop_wsl.sh,      src: stop_wsl.sh }
+  - { state: present, path: git_local_all.sh, src: git_local_all.sh }
 
 # Local Variables:
 # indent-tabs-mode: nil
