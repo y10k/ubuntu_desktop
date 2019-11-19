@@ -18,7 +18,7 @@ dotfiles_link_list:
   - { state: present, path: .aspell.conf,     src: dot.aspell.conf }
   - { state: present, path: start_wsl.sh,     src: start_wsl.sh }
   - { state: present, path: stop_wsl.sh,      src: stop_wsl.sh }
-  - { state: present, path: git_local_all.sh, src: git_local_all.sh }
+  - { state: absent,  path: git_local_all.sh, src: git_local_all.sh }
 
 # Local Variables:
 # indent-tabs-mode: nil
