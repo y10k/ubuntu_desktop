@@ -90,6 +90,7 @@ apt_packages_setup_list:
   - { state: present, name: libluajit-5.1-dev }
   - { state: present, name: aspell }
   - { state: present, name: gnuplot }
+  - { state: absent,  name: ngraph-gtk }
 
 # Local Variables:
 # indent-tabs-mode: nil
