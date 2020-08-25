@@ -7,19 +7,17 @@
 - name: absent packages
   become: yes
   apt:
-    name: "{{ item }}"
+    name: >-
+      {{ apt_packages_setup_list | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
     state: absent
     purge: yes
-  with_items: >-
-    {{ apt_packages_setup_list | selectattr("state", "eq", "absent") | map(attribute="name") | list }}
 
 - name: present packages
   become: yes
   apt:
-    name: "{{ item }}"
+    name: >-
+      {{ apt_packages_setup_list | selectattr("state", "eq", "present") | map(attribute="name") | list }}
     state: present
-  with_items: >-
-    {{ apt_packages_setup_list | selectattr("state", "eq", "present") | map(attribute="name") | list }}
 
 # Local Variables:
 # indent-tabs-mode: nil

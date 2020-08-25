@@ -1,10 +1,8 @@
 - name: packages
   become: yes
   pip:
-    name: "{{ item }}"
+    name: "{{ python_packages_setup_list }}"
     state: present
-  with_items:
-    - "{{ python_packages_setup_list }}"
 
 # Local Variables:
 # indent-tabs-mode: nil
