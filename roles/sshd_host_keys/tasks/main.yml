@@ -1,0 +1,14 @@
+- name: sshd host keys
+  become: yes
+  command: "ssh-keygen -q -t {{ item.type }} -f {{ item.filename }} -C '' -N ''"
+  args:
+    creates: "{{ item.filename }}"
+  with_items:
+    - type: rsa
+      filename: /etc/ssh/ssh_host_rsa_key
+    - type: dsa
+      filename: /etc/ssh/ssh_host_dsa_key
+    - type: ecdsa
+      filename: /etc/ssh/ssh_host_ecdsa_key
+    - type: ed25519
+      filename: /etc/ssh/ssh_host_ed25519_key

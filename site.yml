@@ -5,6 +5,7 @@
     - apt_packages
     - python_packages
     - sshd_authpass
+    - sshd_host_keys
     - ssh_public_key
     - emacs_d
     - dotfiles
