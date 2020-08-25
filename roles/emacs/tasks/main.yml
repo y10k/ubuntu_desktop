@@ -1,0 +1,6 @@
+- name: packages
+  become: yes
+  apt:
+    name:
+      - emacs
+      - emacs-el

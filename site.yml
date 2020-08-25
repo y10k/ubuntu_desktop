@@ -10,9 +10,15 @@
     - dotfiles
     - pandoc_github_css
     - xfonts
-    - y10k.kelleyk_emacs
     - y10k.ruby_build
     - y10k.rubygems_setup
+  tasks:
+    - include_role:
+        name: y10k.kelleyk_emacs
+      when: ansible_distribution == "Ubuntu" and ansible_distribution_major_version == 20
+    - include_role:
+        name: emacs
+      when: not(ansible_distribution == "Ubuntu" and ansible_distribution_major_version == 20)
 
 # Local Variables:
 # indent-tabs-mode: nil
