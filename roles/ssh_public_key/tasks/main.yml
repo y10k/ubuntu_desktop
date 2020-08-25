@@ -2,8 +2,8 @@
   file:
     state: directory
     path: "{{ item }}"
-    owner: "{{ ansible_user_uid }}"
-    group: "{{ ansible_user_gid }}"
+    owner: "{{ ansible_user_uid | string }}"
+    group: "{{ ansible_user_gid | string }}"
     mode: 0700
   with_items:
     - "{{ ansible_user_dir }}/.ssh"
@@ -11,8 +11,8 @@
 - name: authorized_keys
   lineinfile:
     path: "{{ ansible_user_dir }}/.ssh/authorized_keys"
-    owner: "{{ ansible_user_uid }}"
-    group: "{{ ansible_user_gid }}"
+    owner: "{{ ansible_user_uid | string }}"
+    group: "{{ ansible_user_gid | string }}"
     mode: 0600
     regexp: "{{ item.type | regex_escape }} {{ item.public_key | regex_escape }}"
     line: "{% if item.options is defined %}{{ item.options }}{% endif %}{{ item.type }} {{ item.public_key }} {{ item.comment }}"
