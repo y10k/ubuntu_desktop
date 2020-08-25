@@ -80,7 +80,7 @@ apt_packages_setup_list:
   - { state: present, name: lvm2 }
   - { state: present, name: screen }
   - { state: present, name: ansible }
-  - { state: present, name: python-pip }
+  - { state: present, name: python3-pip }
   - { state: present, name: pandoc }
   - { state: present, name: libqdbm-dev }
   - { state: present, name: qdbm-doc }
