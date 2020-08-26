@@ -7,6 +7,7 @@
     - sshd_authpass
     - sshd_host_keys
     - ssh_public_key
+    - docker_user
     - emacs_d
     - dotfiles
     - pandoc_github_css
