@@ -1,0 +1,23 @@
+- name: backup destination base directory
+  stat:
+    path: "{{ home_backup_dest.base_dir }}"
+  register: backup_dest_base_dir
+
+- fail:
+    msg: "{{ home_backup_dest.base_dir }} should be exists."
+  when: not(backup_dest_base_dir.stat.exists and backup_dest_base_dir.stat.isdir)
+
+- name: backup destination subdirectory
+  file:
+    path: "{{ home_backup_dest.base_dir }}/{{ home_backup_dest.subdirectory }}"
+    state: directory
+
+- name: backup archive
+  # archive module is incomplete handling of symbolic link and slow.
+  command: "tar czf {{ home_backup_dest.base_dir }}/{{ home_backup_dest.subdirectory }}/{{ home_backup_dest.archive }} {{ home_backup_path | basename }}"
+  args:
+    chdir: "{{ home_backup_path | dirname }}"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

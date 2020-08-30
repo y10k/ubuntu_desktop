@@ -20,6 +20,11 @@ task :update do
   sh "ansible-playbook -Ki inventory/local update.yml"
 end
 
+desc 'run home backup playbook on localhost'
+task :backup do
+  sh "ansible-playbook -i inventory/local backup.yml"
+end
+
 desc 'ping to test container'
 task :ping_test => %w[ test:inventory ].map(&:to_sym) do
   sh "ansible -i inventory/test all -m ping"

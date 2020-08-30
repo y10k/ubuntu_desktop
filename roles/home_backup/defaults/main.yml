@@ -1,0 +1,9 @@
+home_backup_path: "{{ ansible_user_dir }}"
+home_backup_dest:
+  base_dir: "/mnt/c/Users/{{ ansible_user_id }}/Documents"
+  subdirectory: tmp
+  archive: "home.{{ ansible_user_id }}.tar.gz"
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:

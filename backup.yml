@@ -1,0 +1,7 @@
+- hosts: all
+  roles:
+    - home_backup
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
