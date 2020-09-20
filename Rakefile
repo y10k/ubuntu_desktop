@@ -25,6 +25,11 @@ task :backup do
   sh "ansible-playbook -i inventory/local backup.yml"
 end
 
+desc 'copy backup files to remote server'
+task :backup_scp do
+  sh "scp /mnt/c/Users/toki/Documents/tmp/home.*.tar.gz.* 192.168.100.200:/home/toki/backup/."
+end
+
 desc 'ping to test container'
 task :ping_test => %w[ test:inventory ].map(&:to_sym) do
   sh "ansible -i inventory/test all -m ping"
