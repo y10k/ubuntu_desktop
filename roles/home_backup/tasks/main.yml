@@ -18,6 +18,10 @@
   args:
     chdir: "{{ home_backup_path | dirname }}"
 
+- name: split archive
+  # archive module is incomplete handling of symbolic link and slow.
+  command: "split --bytes=2147483648 {{ home_backup_dest.base_dir }}/{{ home_backup_dest.subdirectory }}/{{ home_backup_dest.archive }} {{ home_backup_dest.base_dir }}/{{ home_backup_dest.subdirectory }}/{{ home_backup_dest.archive }}."
+
 # Local Variables:
 # indent-tabs-mode: nil
 # End:
